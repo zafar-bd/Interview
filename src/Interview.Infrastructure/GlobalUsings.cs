@@ -1,0 +1,12 @@
+﻿global using CsvHelper;
+global using CsvHelper.Configuration;
+global using Interview.Domain.Restaurant;
+global using Interview.Domain.Shared;
+global using System.Globalization;
+global using System.Text;
+global using System.Text.RegularExpressions;
+global using Domain.Interfaces;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Infrastructure.Data.Repositories;
+global using System.Reflection;
