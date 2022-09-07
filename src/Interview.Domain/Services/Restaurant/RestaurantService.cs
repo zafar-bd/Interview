@@ -1,11 +1,4 @@
-﻿using API.DTOs.Users;
-using Interview.Domain.Restaurant;
-using Interview.Domain.Services;
-using Interview.Domain.Services.Restaurant;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 
 namespace API.Services.Users
 {
@@ -20,5 +13,9 @@ namespace API.Services.Users
             this._restaurantRepository = restaurantRepository;
         }
 
+        public async Task<RestaurantScheduleViewModel> GetRestaurantSchedulesAsync(RestaurantQueryDto restaurantQueryDto, CancellationToken cancellationToken)
+        {
+            return await _restaurantRepository.GetRestaurantSchedulesAsync(restaurantQueryDto, cancellationToken);
+        }
     }
 }

@@ -38,29 +38,29 @@
                 HasHeaderRecord = false
             };
 
-            using StreamReader reader = new("data.csv");
+            using StreamReader reader = new("Seed/data.csv");
             using CsvReader csv = new(reader, config);
-            var records = csv.GetRecords<Sample>();
+            var records = csv.GetRecords<Sample>().ToList();
             return records;
         }
 
-        private static (TimeOnly StartTime, TimeOnly EndTime) ParseTime(string input)
+        private static (DateTime StartTime, DateTime EndTime) ParseTime(string input)
         {
             StringBuilder timeValue = new();
 
-            foreach (Match m in Regex.Matches(input.Replace(" ", ""), Constants.TimePattern))
+            foreach (Match m in Regex.Matches(input.Replace(" ", ""), AppConstants.TimePattern))
                 timeValue.Append(m.Value);
 
             var times = timeValue.ToString().Split('-').Where(t => !string.IsNullOrWhiteSpace(t)).ToList();
-            var startTime = TimeOnly.Parse(times[0]);
-            var endTime = TimeOnly.Parse(times[1]);
+            var startTime = DateTime.Parse(times[0]);
+            var endTime = DateTime.Parse(times[1]);
 
             return (startTime, endTime);
         }
 
         private static Schedule BuildSchedule(int scheduleId, int dayId, string timeString)
         {
-            timeString = Regex.Replace(timeString, Constants.DayPattern, "");
+            timeString = Regex.Replace(timeString, AppConstants.DayPattern, "");
             Schedule schedule = new()
             {
                 DayId = dayId,
@@ -79,13 +79,13 @@
             var daysFromStorage = Week.GetDays();
             shedule = shedule.Replace(" ", "");
 
-            if (Regex.IsMatch(shedule, Constants.DayRangePattern))
+            if (Regex.IsMatch(shedule, AppConstants.DayRangePattern))
             {
                 BuildScheduleRange(restaurant, scheduleId, shedule, daysFromStorage);
             }
 
-            shedule = Regex.Replace(shedule, Constants.DayRangePattern, "");
-            if (!Regex.IsMatch(shedule, Constants.DayPattern))
+            shedule = Regex.Replace(shedule, AppConstants.DayRangePattern, "");
+            if (!Regex.IsMatch(shedule, AppConstants.DayPattern))
                 return restaurant;
 
             BuildScheduleDay(restaurant, scheduleId, shedule, daysFromStorage);
@@ -95,7 +95,7 @@
 
         private static void BuildScheduleRange(Restaurant restaurant, int scheduleId, string shedule, List<Day> daysFromStorage)
         {
-            foreach (Match m in Regex.Matches(shedule, Constants.DayRangePattern))
+            foreach (Match m in Regex.Matches(shedule, AppConstants.DayRangePattern))
             {
                 var dayRange = m.Value.Split("-").ToList();
                 for (int i = 0; i < dayRange.Count; i++)
@@ -125,7 +125,7 @@
 
         private static void BuildScheduleDay(Restaurant restaurant, int scheduleId, string shedule, List<Day> daysFromStorage)
         {
-            foreach (Match m in Regex.Matches(shedule, Constants.DayPattern))
+            foreach (Match m in Regex.Matches(shedule, AppConstants.DayPattern))
             {
                 var days = m.Value.Split(" ").Where(d => !string.IsNullOrWhiteSpace(d)).ToList();
                 for (int i = 0; i < days.Count; i++)

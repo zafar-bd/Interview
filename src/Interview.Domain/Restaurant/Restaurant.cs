@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public byte[] ConcurrencyStamp { get; set; }
         public List<Schedule> Schedules { get; set; } = new();
     }
 }

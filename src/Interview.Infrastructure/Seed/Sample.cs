@@ -11,7 +11,7 @@
         public static List<Day> GetDays()
         {
             List<Day> days = new();
-            var splittedDays = Constants.CommaSeparatedDays.Split(',');
+            var splittedDays = AppConstants.CommaSeparatedDays.Split(',');
             for (int i = 0; i < splittedDays.Length; i++)
             {
                 days.Add(new()

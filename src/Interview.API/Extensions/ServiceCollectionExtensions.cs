@@ -1,14 +1,6 @@
-﻿using API.Services.Users;
-using Domain.Departments;
-using Domain.Interfaces;
-using Domain.Users;
-using Infrastructure.Data;
-using Infrastructure.Data.Repositories;
-using Interview.Domain.Restaurant;
-using Interview.Domain.Services.Restaurant;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Foundatio.Caching;
+using Interview.Domain.Cache;
+using Interview.Domain.Shared;
 
 namespace Interview.API.Extensions
 {
@@ -30,12 +22,20 @@ namespace Interview.API.Extensions
             , IConfiguration configuration)
         {
             return services.AddDbContext<EFContext>(options =>
-                     options.UseSqlServer(configuration.GetConnectionString("local")));
+            {
+                options
+                .UseSqlServer(configuration.GetConnectionString(AppConstants.LocalDbConnectionStringName))
+                .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            });
         }
 
         public static IServiceCollection AddBusinessServices(this IServiceCollection services)
         {
-            return services.AddScoped<IRestaurantService, RestaurantService>();
+            services.AddScoped<IRestaurantService, RestaurantService>();
+            services.AddScoped<ICacheClient, InMemoryCacheClient>();
+            services.AddScoped<ICacheService, CacheService>();
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
+            return services;
         }
     }
 }

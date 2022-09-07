@@ -1,2 +1,13 @@
 ﻿global using Microsoft.EntityFrameworkCore;
 global using Domain.Interfaces;
+global using Interview.Domain.Dto;
+global using Interview.Domain.ViewModel;
+global using Interview.Domain.Restaurant;
+global using Interview.Domain.Services;
+global using Interview.Domain.Services.Restaurant;
+global using System;
+global using System.Collections.Generic;
+global using System.Threading.Tasks;
+global using Foundatio.Caching;
+global using MediatR;
+global using Microsoft.Extensions.Logging;
