@@ -1,10 +1,10 @@
 ﻿namespace Interview.Domain.Cache
 {
-    public class CachingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>, ICacheableMediatrQuery
+    public class CachingMiddleware<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>, ICacheableMediatrQuery
     {
         private readonly ICacheService _cache;
         private readonly ILogger _logger;
-        public CachingBehavior(ICacheService cache, ILogger<TResponse> logger)
+        public CachingMiddleware(ICacheService cache, ILogger<TResponse> logger)
         {
             _cache = cache;
             _logger = logger;

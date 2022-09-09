@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Interview.Infrastructure.Migrations
 {
-    [DbContext(typeof(EFContext))]
+    [DbContext(typeof(RestaurantEFContext))]
     [Migration("20220907145944_Init")]
     partial class Init
     {

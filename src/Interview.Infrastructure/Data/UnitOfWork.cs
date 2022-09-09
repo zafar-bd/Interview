@@ -2,9 +2,9 @@
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly EFContext _dbContext;
+        private readonly RestaurantEFContext _dbContext;
 
-        public UnitOfWork(EFContext dbContext)
+        public UnitOfWork(RestaurantEFContext dbContext)
         {
             _dbContext = dbContext;
         }

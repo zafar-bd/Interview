@@ -4,7 +4,7 @@
     {
         private readonly DbSet<T> _dbSet;
 
-        public RepositoryBase(EFContext dbContext)
+        public RepositoryBase(RestaurantEFContext dbContext)
         {
             _dbSet = dbContext.Set<T>();
         }

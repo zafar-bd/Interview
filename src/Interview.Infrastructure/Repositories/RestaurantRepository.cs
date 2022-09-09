@@ -6,7 +6,7 @@ namespace Infrastructure.Data.Repositories
 {
     public class RestaurantRepository : RepositoryBase<Restaurant>, IRestaurantRepository
     {
-        public RestaurantRepository(EFContext dbContext) : base(dbContext)
+        public RestaurantRepository(RestaurantEFContext dbContext) : base(dbContext)
         {
         }
 
@@ -18,7 +18,7 @@ namespace Infrastructure.Data.Repositories
             if (args.RestaurantId > 0)
                 query = query.Where(r => r.Id == args.RestaurantId);
 
-            if (string.IsNullOrWhiteSpace(args.Name))
+            if (!string.IsNullOrWhiteSpace(args.Name))
                 query = query.Where(r => r.Name.Contains(args.Name, StringComparison.InvariantCultureIgnoreCase));
 
             if (args.DayId > 0)

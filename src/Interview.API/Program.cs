@@ -1,5 +1,4 @@
-using Interview.API.Extensions;
-using Interview.API.Middlewares;
+using Interview.Infrastructure.Seed;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,12 +8,19 @@ builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add(typeof(ValidateModelStateFilter));
-});
+    options.Filters.Add(typeof(GlobalExceptionFilter));
+}).AddJsonOptions(opts =>
+    {
+        opts.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+        opts.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+        opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+        opts.JsonSerializerOptions.Converters.Add(new DateTimeConverter());
+    });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<ApiBehaviorOptions>(o => { o.SuppressModelStateInvalidFilter = true; });
-builder.Services.AddValidatorsFromAssemblyContaining<RestaurantQueryValidator>();
+builder.Services.AddFluentValidationAutoValidation().AddValidatorsFromAssemblyContaining<RestaurantQueryValidator>();
 builder.Services.AddDistributedMemoryCache();
 builder.Services
     .AddRepositories()
@@ -42,5 +48,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+if (app.Environment.IsDevelopment())
+    app.Services.SeedData();
 
 app.Run();

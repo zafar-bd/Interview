@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Interview.Infrastructure.Migrations
 {
-    [DbContext(typeof(EFContext))]
+    [DbContext(typeof(RestaurantEFContext))]
     partial class EFContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
