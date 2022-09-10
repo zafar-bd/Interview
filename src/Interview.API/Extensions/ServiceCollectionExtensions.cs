@@ -24,7 +24,7 @@ namespace Interview.API.Extensions
             return services.AddDbContext<RestaurantEFContext>(options =>
             {
                 options
-                .UseSqlServer(configuration.GetConnectionString(AppConstants.LocalDbConnectionStringName), o => o.MigrationsAssembly("INterview"))
+                .UseSqlServer(configuration.GetConnectionString(AppConstants.LocalDbConnectionStringName))
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
         }
@@ -32,8 +32,8 @@ namespace Interview.API.Extensions
         public static IServiceCollection AddBusinessServices(this IServiceCollection services)
         {
             services.AddScoped<IRestaurantService, RestaurantService>();
-            services.AddScoped<ICacheClient, InMemoryCacheClient>();
-            services.AddScoped<ICacheService, CacheService>();
+            services.AddSingleton<ICacheClient, InMemoryCacheClient>();
+            services.AddSingleton<ICacheService, CacheService>();
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(CachingMiddleware<,>));
             return services;
         }

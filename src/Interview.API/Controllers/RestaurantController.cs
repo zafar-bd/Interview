@@ -1,4 +1,6 @@
-﻿namespace Interview.API.Controllers
+﻿using MediatR;
+
+namespace Interview.API.Controllers
 {
     [Route("api/restaurants")]
     [ApiController]
@@ -11,7 +13,10 @@
             this.mediator = mediator;
         }
         [HttpGet]
-        public async Task<IActionResult> GetRestaurants([FromQuery] RestaurantQueryDto args, CancellationToken cancellationToken)
-        => Ok(await mediator.Send(args, cancellationToken));
+        public async Task<IActionResult> GetRestaurants([FromQuery] RestaurantQueryDto request, CancellationToken cancellationToken)
+        {
+            request.CacheKey = $"{request.Name}_{request.RestaurantId}_{request.DayId}_{request.Start}_{request.End}_{request.PageMaxSize}_{request.PageIndex}";
+            return Ok(await mediator.Send(request, cancellationToken));
+        }
     }
 }

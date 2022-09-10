@@ -1,4 +1,6 @@
-﻿namespace Interview.Infrastructure.Seed
+﻿using CsvHelper;
+
+namespace Interview.Infrastructure.Seed
 {
     public class Sample
     {
@@ -8,7 +10,7 @@
     }
     public static class Week
     {
-        public static List<Day> GetDays()
+        public static List<Day> GetDays(bool isFromDataSeed)
         {
             List<Day> days = new();
             var splittedDays = AppConstants.CommaSeparatedDays.Split(',');
@@ -16,7 +18,7 @@
             {
                 days.Add(new()
                 {
-                    Id = i + 1,
+                    Id = isFromDataSeed ? 0 : i + 1,
                     Name = splittedDays[i]
                 });
             }

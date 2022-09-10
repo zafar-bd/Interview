@@ -1,18 +1,17 @@
-﻿namespace Interview.Infrastructure.Seed
+﻿using Interview.Domain.Helpers;
+
+namespace Interview.Infrastructure.Seed
 {
     public class DataReader
     {
         public static IEnumerable<Restaurant> RetrieveSampleData()
         {
             IEnumerable<Sample> records = ReadCsv();
-            int initId = 1;
-            int scheduleId = 1;
             List<Restaurant> restaurants = new();
             foreach (var groupedRecord in records.GroupBy(s => s.Key))
             {
                 Restaurant resturant = new()
                 {
-                    Id = initId++,
                     Name = groupedRecord.Key
                 };
 
@@ -21,11 +20,10 @@
                     var schedules = scheduleInput.Split('/');
                     foreach (var sch in schedules)
                     {
-                        scheduleId++;
-                        BuildSchedules(resturant, scheduleId, sch);
+                        BuildSchedules(resturant, sch);
                     }
                 }
-
+                restaurants.Add(resturant);
             }
 
             return restaurants;
@@ -44,7 +42,7 @@
             return records;
         }
 
-        private static (DateTime StartTime, DateTime EndTime) ParseTime(string input)
+        private static (TimeSpan StartTime, TimeSpan EndTime) ParseTime(string input)
         {
             StringBuilder timeValue = new();
 
@@ -52,19 +50,18 @@
                 timeValue.Append(m.Value);
 
             var times = timeValue.ToString().Split('-').Where(t => !string.IsNullOrWhiteSpace(t)).ToList();
-            var startTime = DateTime.Parse(times[0]);
-            var endTime = DateTime.Parse(times[1]);
+            var startTime = DateTime.Parse(times[0]).TimeOfDay;
+            var endTime = DateTime.Parse(times[1]).TimeOfDay;
 
             return (startTime, endTime);
         }
 
-        private static Schedule BuildSchedule(int scheduleId, int dayId, string timeString)
+        private static Schedule BuildSchedule(int dayId, string timeString)
         {
             timeString = Regex.Replace(timeString, AppConstants.DayPattern, "");
             Schedule schedule = new()
             {
-                DayId = dayId,
-                Id = scheduleId++
+                DayId = dayId
             };
 
             var (startTime, endTime) = ParseTime(timeString);
@@ -74,26 +71,26 @@
             return schedule;
         }
 
-        private static Restaurant BuildSchedules(Restaurant restaurant, int scheduleId, string shedule)
+        private static Restaurant BuildSchedules(Restaurant restaurant, string shedule)
         {
-            var daysFromStorage = Week.GetDays();
+            var daysFromStorage = Week.GetDays(false);
             shedule = shedule.Replace(" ", "");
 
             if (Regex.IsMatch(shedule, AppConstants.DayRangePattern))
             {
-                BuildScheduleRange(restaurant, scheduleId, shedule, daysFromStorage);
+                BuildSchedules(restaurant, shedule, daysFromStorage);
             }
 
             shedule = Regex.Replace(shedule, AppConstants.DayRangePattern, "");
             if (!Regex.IsMatch(shedule, AppConstants.DayPattern))
                 return restaurant;
 
-            BuildScheduleDay(restaurant, scheduleId, shedule, daysFromStorage);
+            BuildScheduleDay(restaurant, shedule, daysFromStorage);
 
             return restaurant;
         }
 
-        private static void BuildScheduleRange(Restaurant restaurant, int scheduleId, string shedule, List<Day> daysFromStorage)
+        private static void BuildSchedules(Restaurant restaurant, string shedule, List<Day> daysFromStorage)
         {
             foreach (Match m in Regex.Matches(shedule, AppConstants.DayRangePattern))
             {
@@ -115,7 +112,7 @@
 
                         foreach (var day in allDays)
                         {
-                            var schedule = BuildSchedule(scheduleId, day.Id, shedule.ToString());
+                            var schedule = BuildSchedule(day.Id, shedule.ToString());
                             restaurant.Schedules.Add(schedule);
                         }
                     }
@@ -123,7 +120,7 @@
             }
         }
 
-        private static void BuildScheduleDay(Restaurant restaurant, int scheduleId, string shedule, List<Day> daysFromStorage)
+        private static void BuildScheduleDay(Restaurant restaurant, string shedule, List<Day> daysFromStorage)
         {
             foreach (Match m in Regex.Matches(shedule, AppConstants.DayPattern))
             {
@@ -134,11 +131,7 @@
                     Day? currentDayFromStorage = daysFromStorage.FirstOrDefault(d => d.Name == currentDay && !restaurant.Schedules.Any(f => f.DayId == d.Id));
                     if (!string.IsNullOrWhiteSpace(currentDayFromStorage?.Name))
                     {
-                        var schedule = BuildSchedule(scheduleId, currentDayFromStorage.Id, shedule.ToString());
-
-                        if (schedule.Id == 0)
-                            schedule.Id++;
-
+                        var schedule = BuildSchedule(currentDayFromStorage.Id, shedule.ToString());
                         restaurant.Schedules.Add(schedule);
                     }
                 }

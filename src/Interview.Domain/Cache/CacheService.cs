@@ -1,9 +1,11 @@
-﻿namespace Interview.Domain.Cache
+﻿using Newtonsoft.Json.Linq;
+
+namespace Interview.Domain.Cache
 {
     public sealed class CacheService : ICacheService
     {
         private readonly ICacheClient _inMemoryCacheClient;
-        private readonly TimeSpan? _cacheExpireTime;
+        private readonly TimeSpan? _cacheExpireTime = TimeSpan.FromSeconds(10);
         public CacheService(ICacheClient inMemoryCacheClient)
         {
             _inMemoryCacheClient = inMemoryCacheClient;
@@ -11,7 +13,7 @@
 
         public async Task<T> GetAsync<T>(string key,
                                          Func<T> valueProvider = null,
-                                         TimeSpan? expire = null, 
+                                         TimeSpan? expire = null,
                                          CancellationToken? cancellationToken = default)
         {
             if (cancellationToken?.IsCancellationRequested ?? false)

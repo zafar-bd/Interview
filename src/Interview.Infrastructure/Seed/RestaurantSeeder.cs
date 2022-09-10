@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Hosting;
-
-namespace Interview.Infrastructure.Seed
+﻿namespace Interview.Infrastructure.Seed
 {
     public static class RestaurantSeeder
     {
@@ -16,7 +14,7 @@ namespace Interview.Infrastructure.Seed
 
                 if (!dayRepo.Entity.Any())
                 {
-                    dayRepo.Entity.AddRange(Week.GetDays());
+                    dayRepo.Entity.AddRange(Week.GetDays(true));
                     context.SaveChanges();
                 }
 

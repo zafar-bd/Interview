@@ -20,7 +20,7 @@
             async Task<TResponse> GetResponseAndAddToCache()
             {
                 response = await next();
-                await _cache.SetAsync(request.CacheKey, response, null, cancellationToken);
+                await _cache.SetAsync(request.CacheKey, response, TimeSpan.FromHours(10), cancellationToken);
                 return response;
             }
 

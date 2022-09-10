@@ -29,7 +29,7 @@ namespace Interview.Infrastructure.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    ConcurrencyStamp = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
+                    RowVersion = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,17 +40,15 @@ namespace Interview.Infrastructure.Migrations
                 name: "Schedule",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
                     RestaurantId = table.Column<int>(type: "int", nullable: false),
                     DayId = table.Column<int>(type: "int", nullable: false),
-                    Start = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    End = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ConcurrencyStamp = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
+                    Start = table.Column<TimeSpan>(type: "time", nullable: false),
+                    End = table.Column<TimeSpan>(type: "time", nullable: false),
+                    RowVersion = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Schedule", x => x.Id);
+                    table.PrimaryKey("PK_Schedule", x => new { x.DayId, x.RestaurantId });
                     table.ForeignKey(
                         name: "FK_Schedule_Day_DayId",
                         column: x => x.DayId,
@@ -75,12 +73,6 @@ namespace Interview.Infrastructure.Migrations
                 name: "IX_Restaurant_Name",
                 table: "Restaurant",
                 column: "Name",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Schedule_DayId_RestaurantId",
-                table: "Schedule",
-                columns: new[] { "DayId", "RestaurantId" },
                 unique: true);
 
             migrationBuilder.CreateIndex(
