@@ -1,6 +1,5 @@
-﻿namespace Interview.Domain.Shared
+﻿namespace Interview.Domain.Shared;
+
+class Enums
 {
-    class Enums
-    {
-    }
 }

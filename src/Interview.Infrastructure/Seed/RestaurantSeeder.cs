@@ -1,30 +1,29 @@
-﻿namespace Interview.Infrastructure.Seed
+﻿namespace Interview.Infrastructure.Seed;
+
+public static class RestaurantSeeder
 {
-    public static class RestaurantSeeder
+    public static IServiceProvider SeedData(this IServiceProvider services)
     {
-        public static IServiceProvider SeedData(this IServiceProvider services)
+        var scopedFactory = services.GetService<IServiceScopeFactory>();
+
+        using (var scope = scopedFactory.CreateScope())
         {
-            var scopedFactory = services.GetService<IServiceScopeFactory>();
+            var context = scope.ServiceProvider.GetService<RestaurantEFContext>();
+            var dayRepo = scope.ServiceProvider.GetService<IAsyncRepository<Day>>();
+            var restaurantRepo = scope.ServiceProvider.GetService<IAsyncRepository<Restaurant>>();
 
-            using (var scope = scopedFactory.CreateScope())
+            if (!dayRepo.Entity.Any())
             {
-                var context = scope.ServiceProvider.GetService<RestaurantEFContext>();
-                var dayRepo = scope.ServiceProvider.GetService<IAsyncRepository<Day>>();
-                var restaurantRepo = scope.ServiceProvider.GetService<IAsyncRepository<Restaurant>>();
-
-                if (!dayRepo.Entity.Any())
-                {
-                    dayRepo.Entity.AddRange(Week.GetDays(true));
-                    context.SaveChanges();
-                }
-
-                if (!restaurantRepo.Entity.Any())
-                {
-                    restaurantRepo.Entity.AddRange(DataReader.RetrieveSampleData());
-                    context.SaveChanges();
-                }
+                dayRepo.Entity.AddRange(Week.GetDays(true));
+                context.SaveChanges();
             }
-            return services;
+
+            if (!restaurantRepo.Entity.Any())
+            {
+                restaurantRepo.Entity.AddRange(DataReader.RetrieveSampleData());
+                context.SaveChanges();
+            }
         }
+        return services;
     }
 }

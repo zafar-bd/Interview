@@ -1,5 +1,4 @@
-﻿global using API.Services.Users;
-global using Domain.Interfaces;
+﻿global using Domain.Interfaces;
 global using Infrastructure.Data;
 global using Infrastructure.Data.Repositories;
 global using Interview.Domain.Restaurant;

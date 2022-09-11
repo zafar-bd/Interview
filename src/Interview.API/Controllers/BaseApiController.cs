@@ -1,7 +1,6 @@
-﻿namespace Interview.API.Controllers
+﻿namespace Interview.API.Controllers;
+
+[ApiController]
+public class BaseApiController : ControllerBase
 {
-    [ApiController]
-    public class BaseApiController : ControllerBase
-    {
-    }
 }

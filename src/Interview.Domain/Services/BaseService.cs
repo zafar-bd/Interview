@@ -1,12 +1,11 @@
-﻿namespace Interview.Domain.Services
-{
-    public class BaseService
-    {
-        public BaseService(IUnitOfWork unitOfWork)
-        {
-            UnitOfWork = unitOfWork;
-        }
+﻿namespace Interview.Domain.Services;
 
-        protected internal IUnitOfWork UnitOfWork { get; set; }
+public class BaseService
+{
+    public BaseService(IUnitOfWork unitOfWork)
+    {
+        UnitOfWork = unitOfWork;
     }
+
+    protected internal IUnitOfWork UnitOfWork { get; set; }
 }

@@ -1,7 +1,5 @@
-﻿namespace Interview.Domain.Services.Restaurant
+﻿namespace Interview.Domain.Services.Restaurant;
+public interface IRestaurantService
 {
-    public interface IRestaurantService
-    {
-        Task<RestaurantScheduleViewModel> GetRestaurantSchedulesAsync(RestaurantQueryDto restaurantQueryDto, CancellationToken cancellationToken);
-    }
+    Task<RestaurantScheduleViewModel> GetRestaurantSchedulesAsync(RestaurantQueryDto restaurantQueryDto, CancellationToken cancellationToken);
 }

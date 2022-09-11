@@ -1,7 +1,6 @@
-﻿namespace Domain.Interfaces
+﻿namespace Domain.Interfaces;
+
+public interface IAsyncRepository<T> where T : class
 {
-    public interface IAsyncRepository<T> where T : class
-    {
-        DbSet<T> Entity { get; }
-    }
+    DbSet<T> Entity { get; }
 }

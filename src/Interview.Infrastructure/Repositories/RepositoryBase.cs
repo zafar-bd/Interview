@@ -1,14 +1,13 @@
-﻿namespace Infrastructure.Data.Repositories
+﻿namespace Infrastructure.Data.Repositories;
+
+public class RepositoryBase<T> : IAsyncRepository<T> where T : class
 {
-    public class RepositoryBase<T> : IAsyncRepository<T> where T : class
+    private readonly DbSet<T> _dbSet;
+
+    public RepositoryBase(RestaurantEFContext dbContext)
     {
-        private readonly DbSet<T> _dbSet;
-
-        public RepositoryBase(RestaurantEFContext dbContext)
-        {
-            _dbSet = dbContext.Set<T>();
-        }
-
-        public DbSet<T> Entity => _dbSet;
+        _dbSet = dbContext.Set<T>();
     }
+
+    public DbSet<T> Entity => _dbSet;
 }

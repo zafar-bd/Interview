@@ -1,8 +1,7 @@
-﻿namespace Interview.Domain.Cache
+﻿namespace Interview.Domain.Cache;
+
+public interface ICacheableMediatrQuery
 {
-    public interface ICacheableMediatrQuery
-    {
-        bool BypassCache { get; set; }
-        string CacheKey { get; set; }
-    }
+    bool BypassCache { get; set; }
+    string CacheKey { get; set; }
 }

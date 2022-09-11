@@ -1,6 +1,5 @@
-﻿namespace Interview.API.Extensions
+﻿namespace Interview.API.Extensions;
+
+public static class ApplicationBuilderExtensions
 {
-    public static class ApplicationBuilderExtensions
-    {
-    }
 }
