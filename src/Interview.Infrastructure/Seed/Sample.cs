@@ -1,6 +1,4 @@
-﻿using CsvHelper;
-
-namespace Interview.Infrastructure.Seed;
+﻿namespace Interview.Infrastructure.Seed;
 
 public class Sample
 {

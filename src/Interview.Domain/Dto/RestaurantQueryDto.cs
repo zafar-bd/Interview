@@ -1,5 +1,4 @@
 ﻿using Interview.Domain.Cache;
-using MediatR;
 
 namespace Interview.Domain.Dto;
 

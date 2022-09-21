@@ -28,11 +28,11 @@ public class RestaurantRepository : RepositoryBase<Restaurant>, IRestaurantRepos
             query = query.Where(r => r.Schedules.Any(s => s.Start >= TimeSpan.Parse(args.Start) && s.End <= TimeSpan.Parse(args.End)));
 
         restaurantData.Count = await query.CountAsync();
-        
+
         int pageIndex = args.PageIndex - 1;
         int pageSize = args.PageMaxSize;
         int skip = pageIndex * pageSize;
-        
+
         query = query.Skip(skip).Take(pageSize);
 
         var resturants = await query.ProjectToType<RestaurantData>().ToArrayAsync(cancellationToken);

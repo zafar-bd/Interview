@@ -1,6 +1,4 @@
-﻿using MediatR;
-
-namespace Interview.API.Controllers;
+﻿namespace Interview.API.Controllers;
 
 [Route("api/restaurants")]
 [ApiController]

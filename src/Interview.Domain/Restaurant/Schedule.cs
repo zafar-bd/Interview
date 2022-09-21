@@ -8,7 +8,7 @@ public class Schedule
     public int DayId { get; set; }
     public TimeSpan Start { get; set; }
     public TimeSpan End { get; set; }
-    
+
     [Timestamp]
     public byte[] RowVersion { get; set; }
     public Day Day { get; set; }

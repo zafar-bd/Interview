@@ -1,6 +1,4 @@
-﻿using Interview.Domain.Helpers;
-
-namespace Interview.Infrastructure.Seed;
+﻿namespace Interview.Infrastructure.Seed;
 
 public class DataReader
 {

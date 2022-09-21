@@ -3,7 +3,7 @@
 public interface ICacheService
 {
     Task<T> GetAsync<T>(string key, RequestHandlerDelegate<T>? valueProvider = null, TimeSpan? expire = null, CancellationToken? cancellationToken = default);
-    
+
     Task<T> GetAsync<T>(string key, Func<T>? valueProvider = null, TimeSpan? expire = null, CancellationToken? cancellationToken = default);
 
     Task<T> GetAsync<T>(string key, CancellationToken? cancellationToken = default);

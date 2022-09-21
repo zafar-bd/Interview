@@ -1,4 +1,4 @@
-﻿namespace Interview.API.Mediator;
+﻿namespace Interview.API.Handlers;
 
 public class RestaurantQueryHandler : IRequestHandler<RestaurantQueryDto, RestaurantScheduleViewModel>
 {
@@ -6,7 +6,7 @@ public class RestaurantQueryHandler : IRequestHandler<RestaurantQueryDto, Restau
 
     public RestaurantQueryHandler(IRestaurantService restaurantService)
     {
-        this._restaurantService = restaurantService;
+        _restaurantService = restaurantService;
     }
 
     public Task<RestaurantScheduleViewModel> Handle(RestaurantQueryDto request, CancellationToken cancellationToken)
