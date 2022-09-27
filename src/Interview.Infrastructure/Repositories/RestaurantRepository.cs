@@ -19,7 +19,7 @@ public class RestaurantRepository : RepositoryBase<Restaurant>, IRestaurantRepos
             query = query.Where(r => r.Id == args.RestaurantId);
 
         if (!string.IsNullOrWhiteSpace(args.Name))
-            query = query.Where(r => r.Name.Contains(args.Name, StringComparison.InvariantCultureIgnoreCase));
+            query = query.Where(r => r.Name.Contains(args.Name));
 
         if (args.DayId > 0)
             query = query.Where(r => r.Schedules.Any(s => s.DayId == args.DayId));
@@ -27,7 +27,7 @@ public class RestaurantRepository : RepositoryBase<Restaurant>, IRestaurantRepos
         if (!string.IsNullOrWhiteSpace(args.Start) && !string.IsNullOrWhiteSpace(args.End))
             query = query.Where(r => r.Schedules.Any(s => s.Start >= TimeSpan.Parse(args.Start) && s.End <= TimeSpan.Parse(args.End)));
 
-        restaurantData.Count = await query.CountAsync();
+        restaurantData.Count = await query.CountAsync(cancellationToken);
 
         int pageIndex = args.PageIndex - 1;
         int pageSize = args.PageMaxSize;
@@ -35,7 +35,13 @@ public class RestaurantRepository : RepositoryBase<Restaurant>, IRestaurantRepos
 
         query = query.Skip(skip).Take(pageSize);
 
-        var resturants = await query.ProjectToType<RestaurantData>().ToArrayAsync(cancellationToken);
+        var resturants = await query.ProjectToType<RestaurantData>(new TypeAdapterConfig()
+            .NewConfig<Restaurant, RestaurantData>()
+                .Map(dest => dest.Name, src => $"{src.Name})")
+                .Config).ToArrayAsync(cancellationToken);
+
+        //var resturants = await query.ProjectToType<RestaurantData>().ToArrayAsync(cancellationToken);
+
         restaurantData.Data = resturants;
 
         return restaurantData;

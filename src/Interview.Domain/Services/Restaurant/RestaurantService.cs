@@ -12,7 +12,5 @@ public class RestaurantService : BaseService, IRestaurantService
     }
 
     public async Task<RestaurantScheduleViewModel> GetRestaurantSchedulesAsync(RestaurantQueryDto restaurantQueryDto, CancellationToken cancellationToken)
-    {
-        return await _restaurantRepository.GetRestaurantSchedulesAsync(restaurantQueryDto, cancellationToken);
-    }
+    => await _restaurantRepository.GetRestaurantSchedulesAsync(restaurantQueryDto, cancellationToken);
 }
