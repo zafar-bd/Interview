@@ -10,6 +10,7 @@ public class RestaurantController : BaseApiController
     {
         this.mediator = mediator;
     }
+
     [HttpGet]
     public async Task<IActionResult> GetRestaurants([FromQuery] RestaurantQueryDto request, CancellationToken cancellationToken)
     {
