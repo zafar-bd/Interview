@@ -2,7 +2,7 @@
 
 namespace Interview.Domain.Restaurant;
 
-public class Schedule
+public sealed class Schedule
 {
     public int RestaurantId { get; set; }
     public int DayId { get; set; }

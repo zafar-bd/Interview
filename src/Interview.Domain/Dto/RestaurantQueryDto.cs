@@ -2,7 +2,7 @@
 
 namespace Interview.Domain.Dto;
 
-public class RestaurantQueryDto : IRequest<RestaurantScheduleViewModel>, ICacheableMediatrQuery
+public sealed class RestaurantQueryDto : IRequest<RestaurantScheduleViewModel>, ICacheableMediatrQuery
 {
     public RestaurantQueryDto()
     {
