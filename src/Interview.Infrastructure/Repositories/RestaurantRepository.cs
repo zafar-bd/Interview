@@ -37,7 +37,6 @@ public class RestaurantRepository : RepositoryBase<Restaurant>, IRestaurantRepos
 
         var resturants = await query.ProjectToType<RestaurantData>(new TypeAdapterConfig()
             .NewConfig<Restaurant, RestaurantData>()
-                .Map(dest => dest.Name, src => $"{src.Name})")
                 .Config).ToArrayAsync(cancellationToken);
 
         //var resturants = await query.ProjectToType<RestaurantData>().ToArrayAsync(cancellationToken);
