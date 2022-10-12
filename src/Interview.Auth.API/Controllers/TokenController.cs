@@ -18,7 +18,7 @@ namespace Interview.Auth.API.Controllers
             {
                 return Created(string.Empty, JwtConfiguration.GenerateToken(new List<Claim>()
                      {
-                         new Claim(ClaimTypes.Name, loginDto.UserName),
+                         new Claim(JwtRegisteredClaimNames.Name, loginDto.UserName),
                          new Claim(ClaimTypes.Role, "User"),
                          new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                     }));
