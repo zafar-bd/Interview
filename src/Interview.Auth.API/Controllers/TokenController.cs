@@ -1,4 +1,5 @@
 ﻿using Interview.Auth.API.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.JsonWebTokens;
 using System.Security.Claims;
@@ -10,7 +11,7 @@ namespace Interview.Auth.API.Controllers
     public class TokenController : ControllerBase
     {
         [HttpPost]
-        public async Task<IActionResult> GetTokenWithCredentials([FromBody] LoginDto loginDto, CancellationToken cancellationToken)
+        public async Task<IActionResult> GenerateTokenWithCredentials([FromBody] LoginDto loginDto, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
             if (!cancellationToken.IsCancellationRequested)
@@ -20,9 +21,25 @@ namespace Interview.Auth.API.Controllers
                          new Claim(ClaimTypes.Name, loginDto.UserName),
                          new Claim(ClaimTypes.Role, "User"),
                          new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            }));
+                    }));
             }
 
+            return Ok();
+        }
+
+        [Authorize]
+        [HttpGet("claims")]
+        public async Task<IActionResult> GetClaims(CancellationToken cancellationToken)
+        {
+            await Task.CompletedTask;
+            if (!cancellationToken.IsCancellationRequested)
+            {
+                return Ok(User.Claims.Select(s => new
+                {
+                    s.Type,
+                    s.Value
+                }));
+            }
             return Ok();
         }
     }
