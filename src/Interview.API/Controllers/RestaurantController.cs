@@ -1,5 +1,8 @@
-﻿namespace Interview.API.Controllers;
+﻿using Microsoft.AspNetCore.Authorization;
 
+namespace Interview.API.Controllers;
+
+[Authorize]
 [Route("api/restaurants")]
 [ApiController]
 public class RestaurantController : BaseApiController

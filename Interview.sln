@@ -5,11 +5,13 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7467CA9A-1102-4189-A620-85CC9866705C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interview.API", "src\Interview.API\Interview.API.csproj", "{E4276111-3CC1-428B-A63F-C05DC1950D09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interview.API", "src\Interview.API\Interview.API.csproj", "{E4276111-3CC1-428B-A63F-C05DC1950D09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interview.Domain", "src\Interview.Domain\Interview.Domain.csproj", "{836BD735-826B-491B-BA20-6F55191C6BF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interview.Domain", "src\Interview.Domain\Interview.Domain.csproj", "{836BD735-826B-491B-BA20-6F55191C6BF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interview.Infrastructure", "src\Interview.Infrastructure\Interview.Infrastructure.csproj", "{AAC07F34-6588-4231-9CCD-BDDB48E33A16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interview.Infrastructure", "src\Interview.Infrastructure\Interview.Infrastructure.csproj", "{AAC07F34-6588-4231-9CCD-BDDB48E33A16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interview.Auth.API", "src\Interview.Auth.API\Interview.Auth.API.csproj", "{FF7EC57F-6D3C-431D-9D87-06943EE51628}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{AAC07F34-6588-4231-9CCD-BDDB48E33A16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAC07F34-6588-4231-9CCD-BDDB48E33A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAC07F34-6588-4231-9CCD-BDDB48E33A16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF7EC57F-6D3C-431D-9D87-06943EE51628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF7EC57F-6D3C-431D-9D87-06943EE51628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF7EC57F-6D3C-431D-9D87-06943EE51628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF7EC57F-6D3C-431D-9D87-06943EE51628}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +43,7 @@ Global
 		{E4276111-3CC1-428B-A63F-C05DC1950D09} = {7467CA9A-1102-4189-A620-85CC9866705C}
 		{836BD735-826B-491B-BA20-6F55191C6BF1} = {7467CA9A-1102-4189-A620-85CC9866705C}
 		{AAC07F34-6588-4231-9CCD-BDDB48E33A16} = {7467CA9A-1102-4189-A620-85CC9866705C}
+		{FF7EC57F-6D3C-431D-9D87-06943EE51628} = {7467CA9A-1102-4189-A620-85CC9866705C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BDA3011A-BC22-4058-8F4B-9ADA2383B59A}
