@@ -41,7 +41,24 @@ namespace Interview.Auth.API
                 });
         }
 
-        public static JwtDto GenerateToken(IEnumerable<Claim> claims)
+        public static JwtDto GenerateTokens(IEnumerable<Claim> claims, DateTime accessTokenLifeTime, DateTime refreshTokenLifeTime)
+        {
+            (string AccessToken, DateTime AccessTokenValidTo) = GenerateToken(claims, accessTokenLifeTime);
+            
+            var refreshTokenClaims = claims.Where(c => c.Type == ClaimTypes.Name).ToList();
+            refreshTokenClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
+
+            (string RefreshToken, DateTime RefreshTokenValidTo) = GenerateToken(claims, refreshTokenLifeTime);
+            
+            return new JwtDto
+            {
+                AccessToken = AccessToken,
+                Expiration = AccessTokenValidTo,
+                RefreshToken = RefreshToken
+            };
+        }
+
+        private static (string Token, DateTime ValidTo) GenerateToken(IEnumerable<Claim> claims, DateTime lifeTime)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SecretKey#479879fsdf$5454564"));
             var credentials = new SigningCredentials(key, "HS256");
@@ -49,15 +66,12 @@ namespace Interview.Auth.API
             var token = new JwtSecurityToken(
                 issuer: "Issuer",
                 audience: "Audience",
-                claims: claims,                
-                expires: DateTime.UtcNow.AddMinutes(10),
+                claims: claims,
+                expires: lifeTime,
                 signingCredentials: credentials
             );
-            return new JwtDto
-            {
-                AccessToken = new JwtSecurityTokenHandler().WriteToken(token),
-                Expiration = token.ValidTo
-            };
+
+            return (new JwtSecurityTokenHandler().WriteToken(token), token.ValidTo);
         }
     }
 }
