@@ -44,17 +44,12 @@ namespace Interview.Auth.API
         public static JwtDto GenerateTokens(IEnumerable<Claim> claims, DateTime accessTokenLifeTime, DateTime refreshTokenLifeTime)
         {
             (string AccessToken, DateTime AccessTokenValidTo) = GenerateToken(claims, accessTokenLifeTime);
-            
-            var refreshTokenClaims = claims.Where(c => c.Type == ClaimTypes.Name).ToList();
-            refreshTokenClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
-
-            (string RefreshToken, DateTime RefreshTokenValidTo) = GenerateToken(claims, refreshTokenLifeTime);
-            
+                        
             return new JwtDto
             {
                 AccessToken = AccessToken,
                 Expiration = AccessTokenValidTo,
-                RefreshToken = RefreshToken
+                RefreshToken = Guid.NewGuid().ToString()
             };
         }
 
