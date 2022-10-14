@@ -1,0 +1,137 @@
+New/Removal/Class Change,Applicant Name,Applicant Name doesnt match Filing Receipt,"As the applicant is a corporation, LLC or LLP, the applicant name must be the same as the name on the filing receipt.",TRUE,10/14/2022 20:04
+New/Removal/Class Change,Applicant Name,Secretary of State filing receipt missing,Submit a copy of the Secretary of State filing receipt for the corp/LLC/LLP,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Applicant Name,Corporate Minutes Missing,Provide a copy of the corporate minutes for the applicant entity,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Applicant Name,LLC Operating Agreement Missing,Provide a copy of the LLC operating agreement for the applicant entity,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Applicant Name,Organizational Chart Needed,Provide a clear organizational chart for the applicant entity.  Each holding corporation should be listed.  All principals of each entity should be listed along with their percentage of ownership.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Premises Address,Prem Address does not match Lease,Premises address does not match the address listed on lease.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Premises Address,Prem Address does not match bill of sale,Premises address does not match the address listed on the bill of sale.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Premises Address,PremAddress does not match deed,Premises address does not match the address listed on the deed.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Premises Address,Prem address not same on all docs or physical loc. ,Premises address must be written the same on all documents and must be the physical location of the premises (not the mailing address).,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Contact,Missing NOA/Attorney/Rep,Submit a Notice of Appearance or the attorney or representative.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Right to Premises,Lease Missing,Entity owning real property does not match applicant name – A lease between the two parties is required and must be submitted.  ,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Right to Premises,Lease Term Incorrect,The lease must run the full term of the license period (please take processing time into consideration when determining the end date of the lease).  Provide either a new lease document or an amendment/rider to the existing one (signed by both landlord and tenant).  ,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Landlord Identification,Landlord Name Missing from Deed,Landlord name must be the name shown on the deed.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Landlord Identification,Landlord Principals Missing,All principals of the landlord entity must be listed.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Landlord Identification,Deed Missing,"To verify ownership, submit a copy of the deed.",TRUE,10/14/2022 20:04
+New/Removal/Class Change,Financial Disclosure,Source of Funds Missing,The source of ALL funds (cash and borrowed) must be listed on this form.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Financial Disclosure,Financial Docs Missing,Submit financial documentation proving the availability of the funds listed.  You must submit 3 consecutive months-worth of statements from checking or savings accounts showing the availability of the funds at the time they were expended.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Financial Disclosure,Executed Loan Agreements Missing,Submit a copy of all executed loan agreements.  ,TRUE,10/14/2022 20:04
+New/Removal/Class Change,500 Foot Rule Statement,500 foot Premises Missing,Provide the name and address of all on premises liquor establishments located within 500 feet of your establishment.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,501 Foot Rule Statement,500 Foot Statement Missing,Provide a statement addressing why you believe it would be in the public’s interest to issue this license.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Statement of Area Plan,Statement of Area Plan Missing,Please complete the Statement of Area Plan form,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Personal Questionnaire,Personal Questionnaire missing for {},Provide a personal questionnaire for __________________.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Personal Questionnaire,,,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Personal Questionnaire,Residence Address (past) Missing,Provide residence addresses for the last 5 consecutive years.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Personal Questionnaire,Employment Info (past) Missing,"Provide employment information for the last 5 consecutive years.  If unemployed for any period of time during the past 5 years, that must also be reflected.",TRUE,10/14/2022 20:04
+New/Removal/Class Change,Personal Questionnaire,Amend License history for {},________________ has/had license history with the Authority.  Amend question five to reflect all license history.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Personal Questionnaire,Conviction Record found for {},"The Department of Criminal Justice Services has advised us that ________________________ has a conviction record. Amend question 6b to reflect the correct answer and provide a signed statement as to why the question was originally answered no.  Submit a Certificate of Disposition for all arrests and convictions. If convicted of a felony, you must submit a Certificate of Relief from Disabilities.",TRUE,10/14/2022 20:04
+New/Removal/Class Change,Diagrams,Label all Rooms and Bars,Amend the diagram labeling all rooms and bars,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Diagrams,Include Food Prep Area,Amend the diagram to include the food prep area,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Diagrams,Diagram of Basement Missing,Provide a diagram of the basement,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Diagrams,Block Plot Diagram Missing,Provide a block plot diagram,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Diagrams,Outside Area Diagram Missing,Add the outside area to the diagram ,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Photos,Interior Color Photos Missing,"Submit color photos of the interior of the premises including all dining areas, the bar and at least one of the kitchen.  Place the serial number on the back of each photo.",TRUE,10/14/2022 20:04
+New/Removal/Class Change,Photos,Front Exterior Color Photo Missing,Submit one color photo of the front exterior of the premises.  Place the serial number on the back of the photo.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Photos,Outside Area Color Photo Missing,"Submit color photos of any outside area (deck, patio, yard) to be licensed.  The photos must show how the area is contained (fencing, shrubbery, roping off).  Place the serial number on the back of the photos.",TRUE,10/14/2022 20:04
+New/Removal/Class Change,Photos,Applicant Color Photo Missing,Provide a color photo of the applicant (no smaller than passport size) for _______________.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Miscellaneous,Photo ID for {} Missing,Provide a copy of ____________’s photo identification.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Miscellaneous,Menu Missing,Submit a copy of the menu.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Miscellaneous,Proof of Citizenship Missing for {},Provide proof of citizenship for _________________.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Miscellaneous,Additional Restroom Required,You have listed 1 restroom.  The Rules of the State Liquor Authority require 2 separate restrooms for both sexes.  Please submit a request to the Authority asking for a waiver of the 2-restroom rule.  You must explain why you believe one restroom is sufficient for the operation of your establishment.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Miscellaneous,Maximum Occupancy Cert Missing,Submit a copy of the maximum occupancy certificate.,TRUE,10/14/2022 20:04
+New/Removal/Class Change,Other ,Fingerprints needed for {},______________________ needs to be fingerprinted. ,TRUE,10/14/2022 20:04
+Amendments,ABC Officer,Applicant Photo Missing,Provide a color photo of the applicant (no smaller than passport size) for _______________.,TRUE,10/14/2022 20:04
+Amendments,ABC Officer,Fingerprints needed for {},______________________ needs to be fingerprinted.,TRUE,10/14/2022 20:04
+Amendments,ABC Officer,Proof of Citizenship Missing for {},Provide proof of citizenship for _________________.,TRUE,10/14/2022 20:04
+Amendments,ABC Officer,Personal Questionnaire missing for {},Provide a personal questionnaire for __________________.,TRUE,10/14/2022 20:04
+Amendments,ABC Officer,Gender missing on {}'s PQ,Please list gender on _________’s personal questionnaire.,TRUE,10/14/2022 20:04
+Amendments,ABC Officer,Residence Address (past) Missing,Provide residence addresses for the last 5 consecutive years.,TRUE,10/14/2022 20:04
+Amendments,ABC Officer,Employment Info (past) Missing,"Provide employment information for the last 5 consecutive years.  If unemployed for any period of time during the past 5 years, that must also be reflected.",TRUE,10/14/2022 20:04
+Amendments,ABC Officer,Amend License history for {},________________ has/had license history with the Authority.  Amend question five to reflect all license history.,TRUE,10/14/2022 20:04
+Amendments,ABC Officer,Conviction Record found for {},"The Department of Criminal Justice Services has advised us that ________________________ has a conviction record. Amend question 6b to reflect the correct answer and provide a signed statement as to why the question was originally answered no.  Submit a Certificate of Disposition for all arrests and convictions. If convicted of a felony, you must submit a Certificate of Relief from Disabilities.",TRUE,10/14/2022 20:04
+Amendments,Alteration,Current Diagram Missing,Provide a current diagram – showing what the premises looks like before the proposed changes to be made.,TRUE,10/14/2022 20:04
+Amendments,Alteration,Proposed Diagram Missing,Provide a proposed diagram – showing what the premises will look like after the changes are complete.,TRUE,10/14/2022 20:04
+Amendments,Alteration,Block Plot Diagram Missing,Provide a block plot diagram.,TRUE,10/14/2022 20:04
+Amendments,Alteration,Outside Area Diagram Missing,Add the outside area to the proposed diagram.,TRUE,10/14/2022 20:04
+Amendments,Alteration,Building Permit Missing,Provide a copy of the building permit.,TRUE,10/14/2022 20:04
+Amendments,Alteration,Area to be Altered Photos Missing,Provide photos of the area to be altered.,TRUE,10/14/2022 20:04
+Amendments,Alteration,Lease of New Area Missing,Provide a copy of the lease for the proposed new area.,TRUE,10/14/2022 20:04
+Amendments,Alteration,New Premises Establishment Q. Missing,Provide a completed establishment questionnaire for the new proposed premises.,TRUE,10/14/2022 20:04
+Amendments,Alteration,Add Bar Application Missing,"You are adding a new bar to the premises, please provide an additional bar application along with $__________.",TRUE,10/14/2022 20:04
+Amendments,Alteration,Proof of Finances Misses,Provide proof of finances.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Part 1 Principals Missing,List all current principals in Part 1.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Part 2 Principals Missing,List all proposed (current and new) principals in Part 2.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Organizational Chart Needed,Provide a clear organizational chart for the applicant entity.  Each holding corporation should be listed.  All principals of each entity should be listed along with their percentage of ownership.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Contract/Bill of Sale for Stocks/Shares Missing,Provide a copy of the contract or bill of sale for the stock/shares being sold.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Gift Letter Missing,Provide a gift letter for the stock/shares being gifted.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Death Certificate Missing,Provide a copy of the death certificate.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Last will and Testament Missing,Provide a copy of the Last Will & Testament.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Letters of Testamony or Administration Missing,Provide a copy of any Letters of Testamentary or Letters of Administration.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Applicant's Statement missing,Provide a copy of the applicant’s statement completed by all new principals.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Personal Questionnaire Missing,Provide a personal questionnaire for any new individuals.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Proof of Finances Missing,Provide proof of finances.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Standardized Notice Form Missing,Provide a copy of the completed standardized notice form and proof of mailing to the community board.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Corporate Minutes Missing,Provide a copy of the corporate minutes appointing new officers.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Amended Operating Agreement Missing,Provide a copy of the amended operating agreement for the LLC listing all officers.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Applicant Photo Missing for {},Provide a color photo of the applicant (no smaller than passport size) for _______________.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,,,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Proof of Citizenship Missing for {},Provide proof of citizenship for _________________.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Personal Questionnaire missing for {},Provide a personal questionnaire for __________________.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Residence Address (past) Missing,Provide residence addresses for the last 5 consecutive years.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Employment Info (past) Missing,"Provide employment information for the last 5 consecutive years.  If unemployed for any period of time during the past 5 years, that must also be reflected.",TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Amend License history for {},________________ has/had license history with the Authority.  Amend question five to reflect all license history.,TRUE,10/14/2022 20:04
+Amendments,Corporate Change,Conviction Record found for {},"The Department of Criminal Justice Services has advised us that ________________________ has a conviction record. Amend question 6b to reflect the correct answer and provide a signed statement as to why the question was originally answered no.  Submit a Certificate of Disposition for all arrests and convictions. If convicted of a felony, you must submit a Certificate of Relief from Disabilities.",TRUE,10/14/2022 20:04
+Amendments,Endorsement,Contract/Bill of Sale for interest sold Missing,Provide a copy of the contract or bill of sale for the interest being sold.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Gift Letter Missing,Provide a gift letter for the interest being gifted.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Organizational Chart Needed,Provide a clear organizational chart for the applicant entity.  Each holding corporation should be listed.  All principals of each entity should be listed along with their percentage of ownership.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Death Certificate Missing,Provide a copy of the death certificate.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Last will and Testament Missing,Provide a copy of the Last Will & Testament,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Letters of Testamony or Administration Missing,Provide a copy of any Letters of Testamentary or Letters of Administration,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Applicant's Statement missing,Provide a copy of the applicant’s statement completed by each new individual or partner,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Proof of Finances Missing,Provide proof of finances.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Management Agreement Missing,Provide a copy of the management agreement.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Personal Questionnaire Missing,Provide a personal questionnaire for any new individuals.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,911 or Municipality Letter Missing,Provide a copy of the 911 or letter from the municipality changing the premises address.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Bond Rider for Premises Address Missing,Provide a copy of the bond rider amending the premises address.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Amended Certificate of Authority Missing,Provide a copy of the amended Certificate of Authority reflecting the new information.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Marriage Cert Missing,Provide a copy of the marriage certificate.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Divorce Decree Missing,Provide a copy of the divorce decree.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Assumed Name Filing Receipt Missing,Provide a copy of the Assumed Name filing receipt from the Secretary of State.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Corporate Name Filing Receipt Missing,Provide a copy of the Amended Corporate Name filing receipt from the Secretary of State.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Court Authorization Docs Missing,Provide a copy of documentation of Court Authorization.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Business Certificate Missing,Provide a copy of the amended or new Business Certificate from the county clerk’s office.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Amended Operating Agreement Missing,"Provide a copy of the amended operating agreement for the LLC, listing all officers.",TRUE,10/14/2022 20:04
+Amendments,Endorsement,Holding Corp Stipulation Missing,Provide a holding corporation stipulation.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Organizational Chart Needed,Provide a clear organizational chart for the applicant entity.  Each holding corporation should be listed.  All principals of each entity should be listed along with their percentage of ownership.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Bond Rider for New Name Missing,Provide a bond rider reflecting the new name.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Applicant Photo Missing for {},Provide a color photo of the applicant (no smaller than passport size) for _______________.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Fingerprints needed for {},______________________ needs to be fingerprinted.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Proof of Citizenship Missing for {},Provide proof of citizenship for _________________.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Personal Quetionnaire missing for {},Provide a personal questionnaire for __________________.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,,,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Residence Address (past) Missing,Provide residence addresses for the last 5 consecutive years.,TRUE,10/14/2022 20:04
+Amendments,Endorsement,Employment Info (past) Missing,"Provide employment information for the last 5 consecutive years.  If unemployed for any period of time during the past 5 years, that must also be reflected.",TRUE,10/14/2022 20:04
+Amendments,Endorsement,Conviction Record found for {},"The Department of Criminal Justice Services has advised us that ________________________ has a conviction record. Amend question 6b to reflect the correct answer and provide a signed statement as to why the question was originally answered no.  Submit a Certificate of Disposition for all arrests and convictions. If convicted of a felony, you must submit a Certificate of Relief from Disabilities.",TRUE,10/14/2022 20:04
+Amendments,Endorsement,Amend License history for {},________________ has/had license history with the Authority.  Amend question five to reflect all license history.,TRUE,10/14/2022 20:04
+Amendments,MOO,Statement of Changes Missing,Provide a statement explaining the changes being requested.,TRUE,10/14/2022 20:04
+Amendments,MOO,Method of Operatiom Missing,Provide a Method of Operation,TRUE,10/14/2022 20:04
+Amendments,MOO,Standardized Notice Form Missing,Provide a standardized notice form and proof of mailing sent to the municipality or community board notifying them of the proposed changes.,TRUE,10/14/2022 20:04
+Amendments,MOO,Supporting Municiaplity or CB Letter Missing,Provide a letter from the municipality or community board advising that they support the proposed changes.,TRUE,10/14/2022 20:04
+All,All,Additional Funds Required,Additional Funds Required,TRUE,10/14/2022 20:04
+Renewals,All,Bond Missing,Submit the Bond.,TRUE,10/14/2022 20:04
+Renewals,All,Bond not Signed,Signt the Bond.,TRUE,10/14/2022 20:04
+Renewals,All,All Approved Principals Missing,List all the principals approved to be on the license in the corporate section of the renewal application.,TRUE,10/14/2022 20:04
+Renewals,All,Standardized Notice Form Missing,Submit a copy of the 30 day Standardized Notification form sent to the Community Board.,TRUE,10/14/2022 20:04
+Renewals,All,Proof of Mailing for Standardized Notice,Submit a copy of the proof of mailing for the Standardized Notification form. ,TRUE,10/14/2022 20:04
+All,All,Provide Assumed Name Certificate for DBA,Provide a copy of the Assumed Name Certificate from the Secretary of State for your corporation/LLC’s dba name.,TRUE,10/14/2022 20:04
+All,All,Provde Business Cert for DBA,Provide a copy of the business certificate from the county clerk for your dba name.,TRUE,10/14/2022 20:04
+All,All,Provide FEIN,Provide your federal tax identification number.,TRUE,10/14/2022 20:04
+All,All,Provide Certificate of Authority DTF,Provide a copy of your Certificate of Authority from the New York State Tax Department.,TRUE,10/14/2022 20:04
+All,All,Provide Amended Cert of Auth. - Name does not Match,Provide an amended Certificate of Authority – the name must match the applicant name exactly.,TRUE,10/14/2022 20:04
+All,All,Provide Amended Cert of Auth.- Address does not Match,Provide an amended Certificate of Authority – the address must match the premises address exactly.,TRUE,10/14/2022 20:04
+All,All,Provide bond rider amending {},Provide a signed Bond Rider amending _______.,TRUE,10/14/2022 20:04
+All,All,Provide Worker's Comp and Disablity Names and Policy No. ,Provide Worker’s Compensation and Disability Benefits insurance provider names and policy numbers.,TRUE,10/14/2022 20:04
+All,All,Provide Inventory to be Purchased,Provide an inventory of the alcoholic beverages you will be purchasing from the current licensee.,TRUE,10/14/2022 20:04
+All,All,Provide Newspaper Affidavits,Submit a copy of the Newspaper Affidavit(s).,TRUE,10/14/2022 20:04
+All,All,Provide your TTB Permit,Provide your TTB permit.,TRUE,10/14/2022 20:04
+All,All,Surrender Current License in Effect,Surrender of the current license in effect.,TRUE,10/14/2022 20:04

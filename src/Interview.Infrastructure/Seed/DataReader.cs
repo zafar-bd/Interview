@@ -4,7 +4,9 @@ public class DataReader
 {
     public static IEnumerable<Restaurant> RetrieveSampleData()
     {
-        IEnumerable<Sample> records = ReadCsv();
+        var def = ReadCsv2();
+        var records = ReadCsv();
+
         List<Restaurant> restaurants = new();
         foreach (var groupedRecord in records.GroupBy(s => s.Key))
         {
@@ -25,6 +27,21 @@ public class DataReader
         }
 
         return restaurants;
+    }
+
+    private static IEnumerable<Deficiencies> ReadCsv2()
+    {
+        CsvConfiguration config = new(CultureInfo.InvariantCulture)
+        {
+            HasHeaderRecord = false,
+            IgnoreBlankLines = true,
+            IgnoreReferences = true
+        };
+
+        using StreamReader reader = new("Seed/book1.csv");
+        using CsvReader csv = new(reader, config);
+        var records = csv.GetRecords<Deficiencies>().SkipWhile(d => string.IsNullOrWhiteSpace(d.ShortDescription) && string.IsNullOrWhiteSpace(d.Description)).ToList();
+        return records;
     }
 
     private static IEnumerable<Sample> ReadCsv()

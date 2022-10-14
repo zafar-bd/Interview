@@ -4,6 +4,7 @@ public static class RestaurantSeeder
 {
     public static IServiceProvider SeedData(this IServiceProvider services)
     {
+        DataReader.RetrieveSampleData();
         var scopedFactory = services.GetService<IServiceScopeFactory>();
 
         using (var scope = scopedFactory.CreateScope())
