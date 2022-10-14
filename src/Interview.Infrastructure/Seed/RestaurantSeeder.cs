@@ -9,6 +9,7 @@ public static class RestaurantSeeder
         using (var scope = scopedFactory.CreateScope())
         {
             var context = scope.ServiceProvider.GetService<RestaurantEFContext>();
+            context.Database.EnsureCreated();
             var dayRepo = scope.ServiceProvider.GetService<IAsyncRepository<Day>>();
             var restaurantRepo = scope.ServiceProvider.GetService<IAsyncRepository<Restaurant>>();
 

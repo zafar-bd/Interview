@@ -25,15 +25,18 @@ namespace Interview.Auth.API.Controllers
                     }, DateTime.Now.AddMinutes(10), DateTime.Now.AddDays(30)));
             }
 
-            return Ok();
+            return BadRequest();
         }
                
-        [HttpPost("{refreshToken}/refresh")]
-        public async Task<IActionResult> GenerateRefreshTokenWithCredentials([FromRoute] string refreshToken, CancellationToken cancellationToken)
+        [HttpPost("refresh")]
+        public async Task<IActionResult> GenerateRefreshTokenWithCredentials([FromBody] RefreshTokenDto refreshTokenDto, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
             if (!cancellationToken.IsCancellationRequested)
             {
+                if (!JwtConfiguration.IsValidRefreshToken(refreshTokenDto.RefreshToken))
+                    return Unauthorized();
+
                 return Created(string.Empty, JwtConfiguration.GenerateTokens(new List<Claim>()
                      {
                          new Claim(JwtRegisteredClaimNames.Name, "Test Refresh Token User"),
@@ -42,7 +45,7 @@ namespace Interview.Auth.API.Controllers
                    }, DateTime.Now.AddMinutes(10), DateTime.Now.AddDays(30)));
             }
 
-            return Ok();
+            return Unauthorized();
         }
 
         [Authorize]
