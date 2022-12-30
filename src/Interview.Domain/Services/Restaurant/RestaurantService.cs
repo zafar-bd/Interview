@@ -27,10 +27,15 @@ public class RestaurantService : BaseService, IRestaurantService
     {
         Debug.WriteLine($"in service statred: {Environment.CurrentManagedThreadId}");
         var res = _restaurantRepository.GetRestaurantSchedules(restaurantQueryDto, cancellationToken);
-
+        
         Debug.WriteLine($"in service end call: {Environment.CurrentManagedThreadId}");
 
         return res;
     }
 
+    public IQueryable<Domain.Restaurant.Restaurant> OdataResturants()
+    {
+        var query = _restaurantRepository.OdataResturants();
+        return query;
+    }
 }

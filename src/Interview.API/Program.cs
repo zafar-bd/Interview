@@ -1,5 +1,6 @@
 using Interview.Auth.API;
 using Interview.Infrastructure.Seed;
+using Microsoft.AspNetCore.OData;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,11 +8,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddJwt(builder.Configuration);
 builder.Services.AddCors();
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
-builder.Services.AddControllers(options =>
+builder.Services
+    .AddControllers(options =>
 {
     options.Filters.Add(typeof(ValidateModelStateFilter));
     options.Filters.Add(typeof(GlobalExceptionFilter));
-}).AddJsonOptions(opts =>
+}).AddOData(options =>
+                options.Select().Filter().OrderBy().Expand().Count().SetMaxTop(100).SkipToken())
+.AddJsonOptions(opts =>
     {
         opts.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
         opts.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
@@ -42,7 +46,7 @@ app.UseCors(x => x
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI().UseODataQueryRequest().UseODataBatching().UseODataRouteDebug();
 }
 app.UseMiddleware<ErrorHandlerMiddleware>();
 app.UseHttpsRedirection();

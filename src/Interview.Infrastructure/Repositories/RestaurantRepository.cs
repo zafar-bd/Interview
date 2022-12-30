@@ -101,4 +101,10 @@ public class RestaurantRepository : RepositoryBase<Restaurant>, IRestaurantRepos
 
         return restaurantData;
     }
+
+    public IQueryable<Restaurant> OdataResturants()
+    {
+        var query = base.Entity.AsQueryable();
+        return query;
+    }
 }

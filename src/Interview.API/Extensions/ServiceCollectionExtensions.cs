@@ -23,8 +23,9 @@ public static class ServiceCollectionExtensions
     {
         return services.AddDbContext<RestaurantEFContext>(options =>
         {
+            var conStr = configuration.GetConnectionString(AppConstants.LocalDbConnectionStringName);
             options
-            .UseSqlServer(configuration.GetConnectionString(AppConstants.LocalDbConnectionStringName))
+            .UseSqlServer(conStr)
             .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         });
     }
