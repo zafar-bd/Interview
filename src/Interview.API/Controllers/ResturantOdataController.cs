@@ -20,7 +20,6 @@ namespace Interview.API.Controllers
         public ActionResult<IQueryable<Restaurant>> GetAllResturants()
         {
             IQueryable<Restaurant> retrievedRes = this._restaurantService.OdataResturants();
-
             return Ok(retrievedRes);
         }
 
@@ -28,7 +27,6 @@ namespace Interview.API.Controllers
         public ActionResult<IQueryable<RestaurantView>> GetAllResturantsWithView()
         {
             IQueryable<RestaurantView> retrievedRes = this._restaurantService.OdataResturantsWithView();
-
             return Ok(retrievedRes);
         }
 
@@ -36,7 +34,6 @@ namespace Interview.API.Controllers
         public ActionResult<IQueryable<RestaurantData>> GetAllResturantsWithViewModel()
         {
             IQueryable<RestaurantData> retrievedRes = this._restaurantService.OdataResturantsWithViewModel();
-
             return Ok(retrievedRes);
         }
     }
