@@ -15,10 +15,19 @@ namespace Interview.API.Controllers
             this._restaurantService = restaurantService;
         }
 
+        
         [HttpGet,EnableQuery]
-        public ActionResult<IQueryable<Restaurant>> GetAllStudents()
+        public ActionResult<IQueryable<Restaurant>> GetAllResturants()
         {
             IQueryable<Restaurant> retrievedStudents = this._restaurantService.OdataResturants();
+
+            return Ok(retrievedStudents);
+        }
+
+        [HttpGet("view-model"), EnableQuery]
+        public ActionResult<IQueryable<RestaurantData>> GetAllResturantsWithViewModel()
+        {
+            IQueryable<RestaurantData> retrievedStudents = this._restaurantService.OdataResturantsWithViewModel();
 
             return Ok(retrievedStudents);
         }

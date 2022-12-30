@@ -38,4 +38,10 @@ public class RestaurantService : BaseService, IRestaurantService
         var query = _restaurantRepository.OdataResturants();
         return query;
     }
+
+    public IQueryable<RestaurantData> OdataResturantsWithViewModel()
+    {
+        var query = _restaurantRepository.OdataResturantsWithViewModel();
+        return query;
+    }
 }
