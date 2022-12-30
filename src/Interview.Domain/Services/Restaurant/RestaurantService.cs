@@ -1,4 +1,6 @@
-﻿namespace Interview.Domain.Services.Restaurant;
+﻿using System.Diagnostics;
+
+namespace Interview.Domain.Services.Restaurant;
 
 public class RestaurantService : BaseService, IRestaurantService
 {
@@ -12,5 +14,23 @@ public class RestaurantService : BaseService, IRestaurantService
     }
 
     public async Task<RestaurantScheduleViewModel> GetRestaurantSchedulesAsync(RestaurantQueryDto restaurantQueryDto, CancellationToken cancellationToken)
-    => await _restaurantRepository.GetRestaurantSchedulesAsync(restaurantQueryDto, cancellationToken);
+    {
+        Debug.WriteLine($"in service statred: {Environment.CurrentManagedThreadId}");
+        var res = await _restaurantRepository.GetRestaurantSchedulesAsync(restaurantQueryDto, cancellationToken);
+
+        Debug.WriteLine($"in service end call: {Environment.CurrentManagedThreadId}");
+
+        return res;
+    }
+
+    public RestaurantScheduleViewModel GetRestaurantSchedules(RestaurantQueryDto restaurantQueryDto, CancellationToken cancellationToken)
+    {
+        Debug.WriteLine($"in service statred: {Environment.CurrentManagedThreadId}");
+        var res = _restaurantRepository.GetRestaurantSchedules(restaurantQueryDto, cancellationToken);
+
+        Debug.WriteLine($"in service end call: {Environment.CurrentManagedThreadId}");
+
+        return res;
+    }
+
 }

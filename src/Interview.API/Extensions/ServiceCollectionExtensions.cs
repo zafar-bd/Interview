@@ -32,9 +32,25 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddBusinessServices(this IServiceCollection services)
     {
         services.AddScoped<IRestaurantService, RestaurantService>();
+        services.AddScoped<ICacheService, CacheService>();
         services.AddSingleton<ICacheClient, InMemoryCacheClient>();
-        services.AddSingleton<ICacheService, CacheService>();
+        //services.AddTransient<ServiceResolver>(serviceProvider => key =>
+        //{
+        //    switch (key)
+        //    {
+        //        case "A":
+        //             return serviceProvider.GetService<InMemoryCacheClient>();
+        //        case "B":
+        //            return serviceProvider.GetService<InMemoryCacheClient>();
+        //        case "C":
+        //            return serviceProvider.GetService<InMemoryCacheClient>();
+        //        default:
+        //            throw new KeyNotFoundException(); // or maybe return null, up to you
+        //    }
+        //});
         services.AddScoped(typeof(IPipelineBehavior<,>), typeof(CachingMiddleware<,>));
         return services;
     }
+
+    public delegate ICacheClient ServiceResolver(string key);
 }

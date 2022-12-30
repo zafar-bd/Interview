@@ -9,8 +9,8 @@ public class RestaurantQueryHandler : IRequestHandler<RestaurantQueryDto, Restau
         _restaurantService = restaurantService;
     }
 
-    public Task<RestaurantScheduleViewModel> Handle(RestaurantQueryDto request, CancellationToken cancellationToken)
+    public async Task<RestaurantScheduleViewModel> Handle(RestaurantQueryDto request, CancellationToken cancellationToken)
     {
-        return _restaurantService.GetRestaurantSchedulesAsync(request, cancellationToken);
+        return await _restaurantService.GetRestaurantSchedulesAsync(request, cancellationToken);
     }
 }

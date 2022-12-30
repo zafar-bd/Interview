@@ -1,4 +1,5 @@
 ﻿using Interview.Domain.Cache;
+using System.ComponentModel.DataAnnotations;
 
 namespace Interview.Domain.Dto;
 
@@ -12,6 +13,7 @@ public sealed class RestaurantQueryDto : IRequest<RestaurantScheduleViewModel>, 
         if (PageMaxSize == 0)
             PageMaxSize = 10;
     }
+
     public string? Name { get; set; }
     public int? RestaurantId { get; set; }
     public int? DayId { get; set; }

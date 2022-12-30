@@ -4,7 +4,7 @@ public class DataReader
 {
     public static IEnumerable<Restaurant> RetrieveSampleData()
     {
-        var def = ReadCsv2();
+        //var def = ReadCsv2();
         var records = ReadCsv();
 
         List<Restaurant> restaurants = new();
