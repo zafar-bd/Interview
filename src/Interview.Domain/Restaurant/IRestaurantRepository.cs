@@ -8,4 +8,5 @@ public interface IRestaurantRepository : IAsyncRepository<Restaurant>
     RestaurantScheduleViewModel GetRestaurantSchedules(RestaurantQueryDto restaurantQueryDto, CancellationToken cancellationToken);
     IQueryable<Restaurant> OdataResturants();
     IQueryable<RestaurantData> OdataResturantsWithViewModel();
+    IQueryable<RestaurantView> OdataResturantsWithView();
 }

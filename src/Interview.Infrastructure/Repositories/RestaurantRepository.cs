@@ -108,6 +108,12 @@ public class RestaurantRepository : RepositoryBase<Restaurant>, IRestaurantRepos
         return query;
     }
     
+    public IQueryable<RestaurantView> OdataResturantsWithView()
+    {
+        var query = base.DbContext.RestaurantView;
+        return query;
+    }
+
     public IQueryable<RestaurantData> OdataResturantsWithViewModel()
     {
         var query = base.Entity.ProjectToType<RestaurantData>();

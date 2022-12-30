@@ -5,4 +5,5 @@ public interface IRestaurantService
     RestaurantScheduleViewModel GetRestaurantSchedules(RestaurantQueryDto restaurantQueryDto, CancellationToken cancellationToken);
     IQueryable<Domain.Restaurant.Restaurant> OdataResturants();
     IQueryable<RestaurantData> OdataResturantsWithViewModel();
+    IQueryable<RestaurantView> OdataResturantsWithView();
 }
