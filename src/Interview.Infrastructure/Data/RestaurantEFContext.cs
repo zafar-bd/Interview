@@ -11,6 +11,7 @@ public class RestaurantEFContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        modelBuilder.Entity<RestaurantView>().ToView("Vw_Restaurant");
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());        
     }
 }
