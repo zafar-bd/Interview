@@ -36,5 +36,12 @@ namespace Interview.API.Controllers
             IQueryable<RestaurantData> retrievedRes = this._restaurantService.OdataResturantsWithViewModel();
             return Ok(retrievedRes);
         }
+
+        [HttpGet("automapper"), EnableQuery]
+        public ActionResult<IQueryable<RestaurantView1>> GetAllResturantsWithAutomapper()
+        {
+            IQueryable<RestaurantView1> retrievedRes = this._restaurantService.OdataResturantsWithAutomapper();
+            return Ok(retrievedRes);
+        }
     }
 }

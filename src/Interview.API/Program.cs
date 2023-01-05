@@ -46,7 +46,7 @@ app.UseCors(x => x
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI().UseODataQueryRequest().UseODataBatching().UseODataRouteDebug();
+    app.UseSwaggerUI();//.UseODataQueryRequest().UseODataBatching().UseODataRouteDebug();
 }
 app.UseMiddleware<ErrorHandlerMiddleware>();
 app.UseHttpsRedirection();

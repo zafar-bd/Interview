@@ -1,4 +1,7 @@
-﻿using Interview.Domain.Dto;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Interview.Domain.Dto;
+using Interview.Domain.Restaurant;
 using Interview.Domain.ViewModel;
 using Mapster;
 using System.Diagnostics;
@@ -7,12 +10,15 @@ namespace Infrastructure.Data.Repositories;
 
 public class RestaurantRepository : RepositoryBase<Restaurant>, IRestaurantRepository
 {
-    public RestaurantRepository(RestaurantEFContext dbContext) : base(dbContext)
+    private readonly IAsyncRepository<RestaurantView> _resturantView;
+
+    public RestaurantRepository(RestaurantEFContext dbContext, IAsyncRepository<RestaurantView> resturantView) : base(dbContext)
     {
+        this._resturantView = resturantView;
     }
 
     public RestaurantScheduleViewModel GetRestaurantSchedules(RestaurantQueryDto args, CancellationToken cancellationToken)
-    {        
+    {
         Debug.WriteLine($"started GetRestaurantSchedulesAsync: {Environment.CurrentManagedThreadId}");
         RestaurantScheduleViewModel restaurantData = new();
         var query = base.Entity.AsQueryable();
@@ -107,15 +113,25 @@ public class RestaurantRepository : RepositoryBase<Restaurant>, IRestaurantRepos
         var query = base.Entity.AsQueryable();
         return query;
     }
-    
+
     public IQueryable<RestaurantView> OdataResturantsWithView()
     {
-        var query = base.DbContext.RestaurantView;
+        var query = _resturantView.Entity;
         return query;
     }
+    public IQueryable<RestaurantView1> OdataResturantsWithAutomapper()
+    {
+        var configuration = new MapperConfiguration(cfg =>
+        {
+            cfg.CreateMap<Schedule, MyClass>().ForMember(dto => dto.Day, conf => conf.MapFrom(ol => ol.Day.Name));
+            cfg.CreateProjection<Restaurant, RestaurantView1>();
+        });
 
+        return base.Entity.ProjectTo<RestaurantView1>(configuration).AsQueryable();
+    }
     public IQueryable<RestaurantData> OdataResturantsWithViewModel()
     {
+
         var query = base.Entity.ProjectToType<RestaurantData>();
         return query;
     }

@@ -7,8 +7,6 @@ public class RestaurantEFContext : DbContext
 
     }
 
-    public DbSet<RestaurantView> RestaurantView { get; set; }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<RestaurantView>().ToView("Vw_Restaurant");

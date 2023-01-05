@@ -11,6 +11,7 @@ public static class RestaurantSeeder
         {
             var context = scope.ServiceProvider.GetService<RestaurantEFContext>();
             context.Database.EnsureCreated();
+            context.Database.Migrate();
             var dayRepo = scope.ServiceProvider.GetService<IAsyncRepository<Day>>();
             var restaurantRepo = scope.ServiceProvider.GetService<IAsyncRepository<Restaurant>>();
 

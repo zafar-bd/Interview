@@ -9,4 +9,6 @@ public interface IRestaurantRepository : IAsyncRepository<Restaurant>
     IQueryable<Restaurant> OdataResturants();
     IQueryable<RestaurantData> OdataResturantsWithViewModel();
     IQueryable<RestaurantView> OdataResturantsWithView();
+
+    IQueryable<RestaurantView1> OdataResturantsWithAutomapper();
 }

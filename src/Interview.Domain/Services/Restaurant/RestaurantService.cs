@@ -50,4 +50,10 @@ public class RestaurantService : BaseService, IRestaurantService
         var query = _restaurantRepository.OdataResturantsWithView();
         return query;
     }
+
+    public IQueryable<RestaurantView1> OdataResturantsWithAutomapper()
+    {
+        var query = _restaurantRepository.OdataResturantsWithAutomapper();
+        return query;
+    }
 }
